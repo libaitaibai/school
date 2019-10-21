@@ -1,0 +1,49 @@
+body,
+html {
+  line-height: 1;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  color: #5a5a5a;
+  font-size: 16px;
+}
+
+.dialog-footer{
+  border-top: 1px solid #E4DDDD;
+  padding-top: 20px;
+  margin-top: 15px;
+}
+
+.common_form{
+  &>.title, &>.ct_title{
+    font-size:16px;
+    display: block;
+    padding-left:10px;
+    position: relative;
+    margin-top:10px;
+    margin-bottom:22px;
+    color:#434347;
+    &::before{
+      position: absolute;
+      top: 50%;
+      left:0;
+      transform: translateY(-50%);
+      content:"";
+      display: inline-block;
+      width:5px;
+      height:20px;
+      background:linear-gradient(225deg,rgba(102,157,244,1) 0%,rgba(30,92,191,1) 100%);
+      border-radius:3px;
+    }
+  }
+}
+.red-star{
+  // 图片上传必填时的红*
+  .el-form-item__label{
+    &::before{
+      content: '*';
+      color: #F56C6C;
+      margin-right: 4px;
+    }
+  }
+  
+}
