@@ -2,7 +2,7 @@
 <div>
     <!-- 点击创建 -->
     <div class="created">
-        <el-button size="medium" type="success" icon="el-icon-plus" @click="dialogVisible = true">创建班级名称</el-button>
+        <el-button size="small" type="success" icon="el-icon-plus" @click="dialogVisible = true">创建班级名称</el-button>
     </div>
     <!-- 对话框 -->
     <el-dialog
@@ -29,7 +29,7 @@
                 </el-select>
             </el-form-item>
             <el-form-item label="班级名称">
-                <el-input v-model="searchForm.name"></el-input>
+                <el-input  v-model="searchForm.name" placeholder="请输入" size="small"></el-input>
             </el-form-item>
         </el-form>
         <span slot="footer">

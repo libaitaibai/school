@@ -147,9 +147,8 @@
             },
             async getUserDetail() {
                 const res = await userApi.getDetail(this.id)
-
-                let grade = res.gradeid.length == 0 ? '' :grade ;
-                let classone = res.classid.length == 0 ? '' :classone ;
+                let grade = res.gradeid == 0 ? '' :res.gradeid ;
+                let classone = res.classid == 0 ? '' :res.classid ;
 
                 this.form = {
                     username:res.username,

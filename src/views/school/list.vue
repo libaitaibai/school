@@ -2,7 +2,7 @@
 <div>
 
   <el-row>
-      <el-button type="success" icon="el-icon-plus" size="medium" @click="dialogFormVisible = true">创建学校名称</el-button>
+      <el-button type="success" icon="el-icon-plus" size="small" @click="dialogFormVisible = true">创建学校名称</el-button>
   </el-row>
 
 <el-dialog title="填写内容" :visible.sync="dialogFormVisible" width="30%">
