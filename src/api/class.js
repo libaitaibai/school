@@ -7,7 +7,13 @@ export default class classgrade extends base
     static list_url = '/focus-area/list'
     static async created (params) {
         try {
-            var res = await http.post(this.class_url,params)
+            var res
+            await http.post(this.class_url,params).then(function (response) {
+                res = response 
+            })
+            .catch(function (error) {
+                res = error.response 
+            })
             return res.data
         }catch(error){
             throw error

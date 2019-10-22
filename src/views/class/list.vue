@@ -92,15 +92,15 @@ export default {
             }else{
                 var res = await classApi.created(this.searchForm)
             }
-            if(res.message){
-                this.$message.error('错了哦，这是一条错误消息');
-            }else{
+            if(res.code==200){
                 this.dialogfalse();
                 this.$message({
                     message: '恭喜你，这是一条成功消息',
                     type: 'success'
                 });
                 this.find()
+            }else{
+                this.$message.error(res.data.message);
             }
         },
         // 退出时让form.name清空关闭本页面

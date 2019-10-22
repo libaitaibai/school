@@ -83,14 +83,13 @@
         }else{
           var res = await schoolApi.create(this.form)
         }
-        if(res.message){
-          this.$message.error('提交失败!');
-    
-        }else{
+        if(res.code == 200){
           this.dialogFormVisible = false
           this.clear()
           this.$message.success('提交成功!');
           this.find();
+        }else{
+          this.$message.error(res.data.message);
         }
       },
     

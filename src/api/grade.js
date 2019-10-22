@@ -9,8 +9,13 @@ export default class grade extends base
     static async created(params)
     {
         try{
-            const res = await http.post(this.grade_rul,params)
-            console.log(res)
+            var res
+            await http.post(this.grade_rul,params).then(function (response) {
+                res = response 
+            })
+            .catch(function (error) {
+                res = error.response 
+            })
             return res.data
         }catch(error){
             throw error
