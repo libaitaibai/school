@@ -6,12 +6,14 @@ import School from './school'
 import Grade from './grade'
 import Class from './class'
 import User from './user'
+import Home from './Home'
 
 const Login = () => import('@/views/login/login')
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -27,6 +29,7 @@ export default new Router({
     ...Grade,
     ...Class,
     ...User,
+    ...Home
   ]
 })
 

@@ -12,6 +12,9 @@ import store from './store/store'
 import './components/index.js'
 import { LoadingMixins } from '@/mixins/index'
 
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
+Vue.use(MintUI)
 
 Vue.config.productionTip = false
 
