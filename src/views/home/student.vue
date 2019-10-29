@@ -20,6 +20,8 @@
     </mt-cell>
     <mt-field label="学生姓名" placeholder="请输入学生姓名" type="tel" v-model="form.phone"></mt-field>
     <mt-field label="家长手机号" placeholder="请输入手机号" type="tel" v-model="form.name"></mt-field>
+    
+    <mt-button type="primary" size="normal" @click="submits">点击提交</mt-button>
 
     <mt-popup v-model="popup.school" popup-transition="popup-fade" position="bottom" class="picker-toolbar-select">
           <div class="picker-toolbar-title">
@@ -137,7 +139,11 @@
                 }else{
                     MessageBox('提示', '请先选择年级!');
                 }
-            }
+            },
+          submits(){
+            console.log("tijiao")
+
+          }
         },
         mounted(){
             this.Datainit()
@@ -161,5 +167,9 @@
   .usi-btn-cancel,.usi-btn-sure{
     color: #FF6600
   }
-
+  .mint-button--normal{
+    margin:0 auto;
+    margin-top:60px;
+    display: block;
+  }
 </style>
