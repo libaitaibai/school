@@ -20,7 +20,7 @@
     </mt-cell>
     <mt-field label="学生姓名" placeholder="请输入学生姓名" type="tel" v-model="form.phone"></mt-field>
     <mt-field label="家长手机号" placeholder="请输入手机号" type="tel" v-model="form.name"></mt-field>
-    
+
     <mt-button type="primary" size="normal" @click="submits">点击提交</mt-button>
 
     <mt-popup v-model="popup.school" popup-transition="popup-fade" position="bottom" class="picker-toolbar-select">
@@ -55,16 +55,17 @@
 
 <script>
     import { Cell,Picker ,Popup ,Header ,MessageBox } from 'mint-ui';
-    import { SchoolDataMixins } from '@/mixins/index'
-    import { mapActions, mapGetters } from 'vuex'
+    import homeApi from '@/api/home'
     export default {
-        mixins: [SchoolDataMixins],
         data(){
             return {
               needFetchInCreated: false,
               school:'请选择学校',
               classes:'请选择年级',
               grade:'请选择班级',
+              schoolData:[],
+              gradeData:[],
+              classData:[],
               form:{
                   schoolid:'',
                   gradeid:'',
@@ -89,38 +90,38 @@
         },
         methods:{
             async Datainit(){
-                await this.fetchSchool()
-                let schooltemp = this.commonSchool.map(function(val){return val.name})
+                this.schoolData = await homeApi.getSchool()
+                this.gradeData = await homeApi.getGrade()
+                this.classData = await homeApi.getCalss()
+
+                let schooltemp = this.schoolData.map(function(val){return val.name})
                 this.popup.schoolData = [{values:schooltemp}]
             },
             onSchoolChange(picker, values) {
                 this.school=values;
-                let schooldata = this.commonSchool.filter(v => v.name == values[0])[0];
+                let schooldata = this.schoolData.filter(v => v.name == values[0])[0];
                 if(!schooldata){
                     return ;
                 }
                 this.form.schoolid = schooldata.id
-                let schooltemp = this.filterGradeBySchoolid(schooldata.id)
-
+                let schooltemp = this.gradeData.filter(v => v.schoolid === schooldata.id)
                 let schooltemp1 = schooltemp.map(function(val){return val.name})
                 this.popup.gradeData = [{values:schooltemp1}]
             },
             onGradeChange(picker, values) {
                 this.grade=values;
-                let gradedata = this.commonGrade.filter(v => v.name == values[0])[0];
+                let gradedata = this.gradeData.filter(v => v.name == values[0])[0];
                 if(!gradedata){
                     return ;
                 }
                 this.form.gradeid = gradedata.id
-                let gradetemp = this.filterClassByGrade(gradedata.id)
-
+                let gradetemp = this.classData.filter(v => v.gradeid === gradedata.id)
                 let gradetemp1 = gradetemp.map(function(val){return val.name})
                 this.popup.classData = [{values:gradetemp1}]
-
             },
             onClassChange(picker, values) {
                 this.classes=values;
-                let classdata = this.commonClass.filter(v => v.name == values[0])[0];
+                let classdata = this.classData.filter(v => v.name == values[0])[0];
                 if(!classdata){
                     return ;
                 }
@@ -141,8 +142,7 @@
                 }
             },
           submits(){
-            console.log("tijiao")
-
+            console.log(this.form)
           }
         },
         mounted(){
