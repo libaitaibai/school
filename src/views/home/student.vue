@@ -26,7 +26,7 @@
     <mt-popup v-model="popup.school" popup-transition="popup-fade" position="bottom" class="picker-toolbar-select">
           <div class="picker-toolbar-title">
             <div class="usi-btn-cancel" @click="popup.school = !popup.school">取消</div>
-            <div class="">请选择学校</div>
+            <div class="">请选择学校</div >
             <div class="usi-btn-sure" @click="popup.school = !popup.school">确定</div>
           </div>
           <mt-picker :slots="popup.schoolData" @change="onSchoolChange"></mt-picker>

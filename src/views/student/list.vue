@@ -67,9 +67,20 @@
 
 <style scoped>
     a{
-        color:white;
+      color:white;
     }
     .el-link.el-link--default {
-        color: white;
-}
+      color: white;
+    }
+    .el-button--success{
+      display: inline;
+      margin-left:55px;
+    }
+    .el-upload__tip {
+      margin-left:180px;
+    }
+    .upload-demo{
+      margin-left:85px;
+      display: inline;
+    }
 </style>
