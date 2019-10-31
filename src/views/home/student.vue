@@ -81,11 +81,6 @@
                   gradeData:[],
                   classData:[]
               },
-              showToolbar: true,
-              message: "请选择代理区域",
-              slots: [
-                  {values: ['城市选择', '苏州', '常州', '杭州', '湖州', '上海', '南京'] },
-                  ],
             }
         },
         methods:{
