@@ -24,19 +24,23 @@ export default {
     },
     actions:{
         async fetchSchool({ commit, state }) {
-
-            if (state.school.length > 0) {
-                return
+            if (!state.school) {
+              const [metaSchool] = await Promise.all([CommonData.getSchool(),])
+              commit('setSchool', metaSchool)
+              return
             }
-            const [metaSchool,metaGrade, metaClass] = await Promise.all([
-                CommonData.getSchool(),
-                CommonData.getGrade(),
-                CommonData.getCalss()
-            ])
 
-            commit('setSchool', metaSchool)
-            commit('setGrade', metaGrade)
-            commit('setClass', metaClass)
+            if(!state.grade){
+              const [metaGrade] = await Promise.all([CommonData.getGrade(),])
+              commit('setGrade', metaGrade)
+              return
+            }
+
+            if(!state.class){
+              const [metaClass] = await Promise.all([CommonData.getCalss()])
+              commit('setClass', metaClass)
+              return
+            }
           }
     }
 }
