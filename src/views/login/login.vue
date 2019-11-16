@@ -3,7 +3,7 @@
 
     <div class="form-wrapper">
       <div class='title'>{{title}}</div>
-
+      <div>shan</div>
       <div class= 'form'>
         <el-form :model="form" ref="form" :rules="rules" label-width="80px">
             <el-form-item label="用户名" prop="username">
@@ -22,6 +22,14 @@
             <img src="./loginBg.png" >
             <span class="ct_copyright">开发工具开发</span>
         </div>
+    <div>lanlan</div>
+
+
+
+
+
+
+
   </div>
 </template>
 

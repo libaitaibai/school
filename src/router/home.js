@@ -1,4 +1,5 @@
 const student = () => import('@/views/home/student')
+const check = () => import('@/views/home/check')
 import Mobile from '@/components/layout/Mobile'
 export default [
   {
@@ -10,6 +11,11 @@ export default [
         path: 'home-student',
         name: 'home-student',
         component: student,
+      },
+      {
+        path: 'home-check',
+        name: 'home-check',
+        component: check,
       }
     ]
   },
