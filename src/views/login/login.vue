@@ -12,24 +12,17 @@
             <el-form-item label="密码" prop="password">
                 <el-input type="password" v-model="form.password"></el-input>
             </el-form-item>
+          <div>
             <el-form-item>
                 <el-button class = "login-btn" type="primary" @click="login(form)">登录</el-button>
             </el-form-item>
         </el-form>
       </div>
     </div>
-        <div class='footer'>
-            <img src="./loginBg.png" >
-            <span class="ct_copyright">开发工具开发</span>
-        </div>
-    <div>lanlan</div>
-
-
-
-
-
-
-
+    <div class='footer'>
+        <img src="./loginBg.png" >
+        <span class="ct_copyright">开发工具开发</span>
+    </div>
   </div>
 </template>
 
