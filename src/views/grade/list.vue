@@ -38,6 +38,7 @@
         </el-table-column>
     </base-table>
 </div>
+  <div>gangaigai</div>
 </template>
 
 <script>
