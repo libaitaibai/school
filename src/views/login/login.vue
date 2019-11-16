@@ -3,7 +3,7 @@
 
     <div class="form-wrapper">
       <div class='title'>{{title}}</div>
-
+      <div>shan</div>
       <div class= 'form'>
         <el-form :model="form" ref="form" :rules="rules" label-width="80px">
             <el-form-item label="用户名" prop="username">
