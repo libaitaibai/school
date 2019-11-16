@@ -10,7 +10,7 @@
           <el-button>取消</el-button>
       </el-form-item>
   </el-form>
-
+  <botton>按钮</botton>
 
 </div>
 </template>
