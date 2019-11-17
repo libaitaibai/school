@@ -39,6 +39,8 @@
     </base-table>
 </div>
   <div>gangaigai</div>
+
+  <div>aaaa</div>
 </template>
 
 <script>
