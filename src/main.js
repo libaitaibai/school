@@ -23,6 +23,11 @@ Vue.use(VueAxios, axios)
 Vue.use(ElementUI);
 
 router.beforeEach(function(to,form,next){
+  if(to.matched[0].path == '/home'){
+    next();
+    return;
+  }
+
   //未登录跳转到登录页
   const token = store.state.user.token
   if(!token && (to.name!='login')){

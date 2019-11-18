@@ -1,5 +1,5 @@
 import axios from 'axios';
-import '../../public/config/index.js'
+import '../../../public/config/index.js'
 import storage from 'good-storage'
 
 const  http = axios.create({
@@ -26,13 +26,13 @@ http.interceptors.request.use(
 )
 
 http.interceptors.response.use(
-function (response) {
+  function (response) {
     // Do something with response data
     return response;
-}, function (error) {
+  }, function (error) {
     // Do something with response error
     return Promise.reject(error);
-});
+  });
 
 
 export default http
