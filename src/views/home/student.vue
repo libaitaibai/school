@@ -1,7 +1,6 @@
 <template>
   <div>
     <router-view />
-
     <mt-header title="学生信息收集">
       <router-link to="/" slot="left">
         <!-- <mt-button icon="back">返回</mt-button> -->
