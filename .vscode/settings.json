@@ -1,0 +1,30 @@
+{
+  "http.proxy": "http://172.22.50.173:3228",
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "files.autoSave": "off",
+  "editor.formatOnSave": true,
+  "explorer.confirmDragAndDrop": false,
+  "vetur.format.defaultFormatter.js": "prettier-eslint",
+  "vetur.format.defaultFormatterOptions": {
+    "js-beautify-html": {
+      "wrap_attributes": "force-expand-multiline"
+    },
+    "prettyhtml": {
+      "printWidth": 100,
+      "singleQuote": false,
+      "wrapAttributes": true,
+      "sortAttributes": true
+    },
+    "prettier": {
+      "semi": false,
+      "singleQuote": true
+    }
+  },
+  "window.zoomLevel": 0,
+  "explorer.confirmDelete": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.iconTheme": "vscode-icons"
+}
